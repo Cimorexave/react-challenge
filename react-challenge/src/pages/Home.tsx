@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { TextField, InputAdornment } from '@mui/material';
 import '../styles/Home.css';
-import {DebounceInput} from 'react-debounce-input';
 
 
 const Home = () => {
@@ -24,6 +23,7 @@ const Home = () => {
                 )
         }
     }, [username])
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         console.log(e.target.value)
         setUsername(e.target.value)
