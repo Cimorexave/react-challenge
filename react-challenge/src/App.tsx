@@ -11,7 +11,6 @@ function App() {
       <>
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/:username' element={<UserInfo />} />
             <Route path='/most-popular' element={<MostPopular />}/>
           </Routes>
       </>

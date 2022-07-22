@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { TextField, InputAdornment } from '@mui/material';
 import '../styles/Home.css';
+import UserInfo from './UserInfo';
 
 
 const Home = () => {
@@ -16,7 +17,7 @@ const Home = () => {
                     if (!response.ok) {console.error(Error)}
                     response.json().then (data => {
                         console.log(data)
-
+                        setUserData(data)
                     })
                 }
                     
@@ -45,6 +46,7 @@ const Home = () => {
           ),
         }}
         />
+        
       </div>
   )
 }
