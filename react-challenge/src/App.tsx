@@ -2,17 +2,19 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import UserInfo from './pages/UserInfo';
+import MostPopular from './pages/MostPopular';
 
 function App() {
   
   return (
     <BrowserRouter>
-      <div>
+      <>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/:username' element={<UserInfo />} />
+            <Route path='/most-popular' element={<MostPopular />}/>
           </Routes>
-      </div>
+      </>
     </BrowserRouter>
     
   );
