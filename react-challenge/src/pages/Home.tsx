@@ -2,12 +2,11 @@ import React, {useState, useEffect} from 'react'
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { TextField, InputAdornment } from '@mui/material';
 import '../styles/Home.css';
-import UserInfo from './UserInfo';
-
 
 const Home = () => {
+
     const [username, setUsername] = useState<String>("")
-    const [userData, setUserData] = useState()
+    const [userData, setUserData] = useState<object>()
 
     useEffect(() => {
         if (username.length > 3) {
