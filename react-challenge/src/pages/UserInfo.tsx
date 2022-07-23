@@ -1,13 +1,17 @@
-import React, { ReactComponentElement } from 'react'
+import React, { ReactComponentElement, useContext } from 'react'
+import { userContext } from '../Helper/context'
 
-const UserInfo = (props: any) => {
+const UserInfo = (userData.) => {
+
+  const {userData, setUserData} = useContext(userContext)
+
 console.log('data is:', props.data)
   return (
     <>
-        <h1>{props.data.login}</h1>
-        <p>{props.data.location}</p>
-        <img src={props.data.avatar_url} alt="" />
-        <p>public repos: {props.data.public_repos}</p>
+        <h1>{userData.login}</h1>
+        <p>{userData.location}</p>
+        <img src={userData.avatar_url} alt="avatar" />
+        <p>public repos: {userData.public_repos}</p>
     </>
   )
 }

@@ -6,7 +6,6 @@ import '../styles/Home.css';
 const Home = () => {
 
     const [username, setUsername] = useState<String>("")
-    const [userData, setUserData] = useState<object>()
 
     useEffect(() => {
         if (username.length > 3) {
@@ -16,7 +15,7 @@ const Home = () => {
                     if (!response.ok) {console.error(Error)}
                     response.json().then (data => {
                         console.log(data)
-                        setUserData(data)
+                        //setUserData(data)
                     })
                 }
                     
