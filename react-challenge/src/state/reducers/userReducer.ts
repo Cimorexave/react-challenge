@@ -1,11 +1,10 @@
-import { AcUnitOutlined } from "@mui/icons-material"
 interface actionInterface {
     type: string,
-    payload: {}
+    payload?: any
 }
 const reducer = (state = {}, action: actionInterface) => {
-    if (action.type === "update") {
-        return {...state, action.payload}
+    if (action.type === "get") {
+        return {...state}
     }
     else {
         return state
