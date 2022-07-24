@@ -7,7 +7,8 @@ import {userContext} from './Helper/context'
 
 function App() {
   
-  const [userData, setUserData] = useState<object>({})
+  const [userData, setUserData] = useState<any>({})
+  const userPath = `/${userData.login}`
 
   return (
     <BrowserRouter>
@@ -16,7 +17,8 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/most-popular' element={<MostPopular />}/>
-          </Routes> 
+            <Route path={userPath} element={<UserInfo />} />
+          </Routes>
         </userContext.Provider>
       </>
     </BrowserRouter>

@@ -2,8 +2,12 @@ import React, {useState, useEffect} from 'react'
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { TextField, InputAdornment } from '@mui/material';
 import '../styles/Home.css';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+
+    let navigate = useNavigate();
+
 
     const [username, setUsername] = useState<String>("")
 
@@ -16,6 +20,8 @@ const Home = () => {
                     response.json().then (data => {
                         console.log(data)
                         //setUserData(data)
+                        if (data.login)
+                          navigate(`/${data.login}`, {replace: true})
                     })
                 }
                     
