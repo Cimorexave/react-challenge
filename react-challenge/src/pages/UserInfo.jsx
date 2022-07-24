@@ -25,10 +25,9 @@ const UserInfo = () => {
     <>
         <h1>{userData.login} user </h1>
         <p>{userData.location}</p>
-        <img src={userData.avatar_url} alt="avatar" />
+        <img src={userData.avatar_url} alt="avatar" width="150" height="150"/>
         <p>public repos: {userData.public_repos}</p>
         {/*the repository list*/}
-        <div>{userData.repos_url}</div>
         <RepoList 
         reposList ={userDataRepos}
         />

@@ -14,7 +14,7 @@ const RepoList = ( {reposList} )  => {
               <p>{repo.language}</p>
               {repo.private ? <p>private</p> : <p>public</p> }
               <p>forks: {repo.forks}</p>
-              <p>starts: {repo.stargazers_count}</p>
+              <p>stars: {repo.stargazers_count}</p>
             </div>
           )
         } )
