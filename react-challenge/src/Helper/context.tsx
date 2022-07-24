@@ -1,6 +1,6 @@
 import React, { createContext } from "react";
 export type globalContent = {
-    userData: any,
+    userData: object,
     setUserData: Function
 }
 export const userContext: any = createContext<globalContent>({
