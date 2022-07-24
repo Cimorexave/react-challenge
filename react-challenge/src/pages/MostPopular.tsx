@@ -1,6 +1,5 @@
 import React , {useContext, useState, useEffect} from 'react';
 import { userContext } from '../Helper/context';
-import RepoList from '../Components/RepoList';
 const MostPopular = () => {
   const [userData, setUserData] = useContext(userContext)
   const [reposListState, setReposListState] = useState([])
@@ -17,7 +16,6 @@ const MostPopular = () => {
   return (
     <>
       <input type="text" name="" id="" />
-      <RepoList />
     </>
   )
 }
