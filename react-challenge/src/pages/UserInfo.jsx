@@ -23,7 +23,7 @@ const UserInfo = () => {
 
   return (
     <>
-        <h1>{userData.login} user </h1>
+        <h1>{userData.login} / {userData.name} </h1>
         <p>{userData.location}</p>
         <img src={userData.avatar_url} alt="avatar" width="150" height="150"/>
         <p>public repos: {userData.public_repos}</p>
