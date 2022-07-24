@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react';
+import { userContext } from '../Helper/context';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { TextField, InputAdornment } from '@mui/material';
 import '../styles/Home.css';
@@ -10,6 +11,7 @@ const Home = () => {
 
 
     const [username, setUsername] = useState<String>("")
+    const {userData, setUserData} = useContext(userContext)
 
     useEffect(() => {
         if (username.length > 3) {
@@ -19,7 +21,7 @@ const Home = () => {
                     if (!response.ok) {console.error(Error)}
                     response.json().then (data => {
                         console.log(data)
-                        //setUserData(data)
+                        setUserData(data)
                         if (data.login)
                           navigate(`/${data.login}`, {replace: true})
                     })
