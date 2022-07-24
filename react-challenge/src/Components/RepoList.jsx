@@ -8,6 +8,8 @@ const RepoList = ( {reposList} )  => {
       setReposListState(reposList)
     }, [reposList])
     
+    //commits_url: "https://api.github.com/repos/Cimorexave/2048-clone/commits{/sha}"
+
   return (
     <>
       <div className="listContainer">
@@ -24,6 +26,7 @@ const RepoList = ( {reposList} )  => {
                 {repo.private ? <p>private</p> : <p>public</p> }
                 <p>forks: {repo.forks}</p>
                 <p>stars: {repo.stargazers_count}</p>
+                <p>Last updated at: {repo.updated_at}</p>
               </div>
             )
           } )

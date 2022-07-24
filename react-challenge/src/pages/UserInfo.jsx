@@ -15,6 +15,7 @@ const UserInfo = () => {
           response.json().then(repoData => {
             console.log(repoData)
             setUserDataRepos(repoData)
+            
           })
         }
       })
