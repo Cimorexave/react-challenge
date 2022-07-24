@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useContext} from 'react';
 import { userContext } from '../Helper/context';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import { TextField, InputAdornment } from '@mui/material';
+import { TextField, InputAdornment, Button } from '@mui/material';
 import '../styles/Home.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -22,8 +22,8 @@ const Home = () => {
                     response.json().then (data => {
                         console.log(data)
                         setUserData(data)
-                        if (data.login)
-                          navigate(`/${data.login}`, {replace: true})
+                        //if (data.login)
+                          //navigate(`/${data.login}`, {replace: true})
                     })
                 }
                     
@@ -36,9 +36,14 @@ const Home = () => {
         setUsername(e.target.value)
       }
 
+    const handleClick = () => {
+      
+      navigate(userData.login, {replace: true})
+    }
   return (
     <div className='home'>
         <TextField
+        value={username}
         id='textInput'
         variant='outlined'
         label='Search'
@@ -52,6 +57,8 @@ const Home = () => {
           ),
         }}
         />
+        <Button variant="contained" size="medium" onClick={handleClick}
+        > Search </Button>
         
       </div>
   )
