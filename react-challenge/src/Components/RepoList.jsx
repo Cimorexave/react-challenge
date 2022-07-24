@@ -8,8 +8,13 @@ const RepoList = ( {reposList} )  => {
       {
         reposList.map( repo => {
           return (
-            <div className='repoCard'>
-
+            <div className='repoCard' key={repo.id}>
+              
+              <h1>{repo.name}</h1>
+              <p>{repo.language}</p>
+              {repo.private ? <p>private</p> : <p>public</p> }
+              <p>forks: {repo.forks}</p>
+              <p>starts: {repo.stargazers_count}</p>
             </div>
           )
         } )
