@@ -10,21 +10,26 @@ const RepoList = ( {reposList} )  => {
     
   return (
     <>
-      {
+      <div className="listContainer">
+        <button  >Sort by stars</button>
+        <button  >Sort by forks</button>
+        {
+        
         reposListState.map( repo => {
           return (
             <div className='repoCard' key={repo.id}>
-              <button  >Sort by stars</button>
-              <button  >Sort by forks</button>
-              <h1>{repo.name}</h1>
-              <p>{repo.language}</p>
-              {repo.private ? <p>private</p> : <p>public</p> }
-              <p>forks: {repo.forks}</p>
-              <p>stars: {repo.stargazers_count}</p>
-            </div>
-          )
-        } )
-      }
+              
+                <h1>{repo.name}</h1>
+                <p>{repo.language}</p>
+                {repo.private ? <p>private</p> : <p>public</p> }
+                <p>forks: {repo.forks}</p>
+                <p>stars: {repo.stargazers_count}</p>
+              </div>
+            )
+          } )
+        }
+      </div>
+      
     </>
   )
 }
