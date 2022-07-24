@@ -15,6 +15,8 @@ const RepoList = ( {reposList} )  => {
       <div className="listContainer">
         <button  >Sort by stars</button>
         <button  >Sort by forks</button>
+        <button  >Sort by time</button>
+        Repositories: 
         {
         
         reposListState.map( repo => {
