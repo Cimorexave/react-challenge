@@ -1,2 +1,9 @@
 import React, { createContext } from "react";
-export const userContext: React.Context<{}> = createContext({}) 
+export type globalContent = {
+    userData: any,
+    setUserData: Function
+}
+export const userContext: any = createContext<globalContent>({
+    userData: {},
+    setUserData: () => {},
+}) 

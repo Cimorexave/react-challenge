@@ -1,11 +1,10 @@
 import React, { ReactComponentElement, useContext } from 'react'
 import { userContext } from '../Helper/context'
 
-const UserInfo = (userData.) => {
+const UserInfo = () => {
 
   const {userData, setUserData} = useContext(userContext)
 
-console.log('data is:', props.data)
   return (
     <>
         <h1>{userData.login}</h1>
