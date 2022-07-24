@@ -1,8 +1,18 @@
 import React , {useContext, useState, useEffect} from 'react';
 import { userContext } from '../Helper/context';
+
+interface repoListInterface {
+  id: number,
+  name: string,
+  language: string,
+  private: boolean,
+  forks: string,
+  stargazers_count: number,
+  updated_at: string
+}
 const MostPopular = () => {
-  const [userData, setUserData] = useContext(userContext)
-  const [reposListState, setReposListState] = useState([])
+  const {userData, setUserData} = useContext(userContext)
+  const [reposListState, setReposListState] = useState< Array<repoListInterface> >([])
   const [repoSearch, setRepoSearch] = useState<String>()
 
   const handleRepoSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,7 +39,23 @@ const MostPopular = () => {
 
   return (
     <>
-      <input type="text" name="" id="input" onChangeCapture={handleRepoSearch} />
+      <input type="text" name="" id="input" placeholder='search repos...' onChangeCapture={handleRepoSearch} />
+
+      {
+        reposListState.map( repo => {
+          return (
+            <div className='repoCard' key={repo.id}>
+              
+                <h1>{repo.name}</h1>
+                <p>{repo.language}</p>
+                {repo.private ? <p>private</p> : <p>public</p> }
+                <p>forks: {repo.forks}</p>
+                <p>stars: {repo.stargazers_count}</p>
+                <p>Last updated at: {repo.updated_at}</p>
+              </div>
+            )
+          } )
+        }
     </>
   )
 }
