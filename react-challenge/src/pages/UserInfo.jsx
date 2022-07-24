@@ -1,6 +1,7 @@
 import React, { ReactComponentElement, useContext, useEffect, useState } from 'react'
 import { userContext } from '../Helper/context';
 import RepoList from '../Components/RepoList';
+import { Link } from 'react-router-dom';
 
 const UserInfo = () => {
 
@@ -28,6 +29,7 @@ const UserInfo = () => {
         <p>{userData.location}</p>
         <img src={userData.avatar_url} alt="avatar" width="150" height="150"/>
         <p>public repos: {userData.public_repos}</p>
+        <Link to="/most-popular" >link to most popular</Link>
         {/*the repository list*/}
         <RepoList 
         reposList ={userDataRepos}
