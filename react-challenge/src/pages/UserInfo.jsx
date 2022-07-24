@@ -5,7 +5,7 @@ import RepoList from '../Components/RepoList';
 const UserInfo = () => {
 
   const {userData, setUserData} = useContext(userContext)
-  const [userDataRepos , setUserDataRepos] = useState()
+  const [userDataRepos , setUserDataRepos] = useState([])
   console.log(userData)
 
   useEffect(() => {
