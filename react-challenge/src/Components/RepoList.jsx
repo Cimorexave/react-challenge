@@ -13,6 +13,7 @@ const RepoList = ( {reposList} )  => {
   return (
     <>
       <div className="listContainer">
+        {/*handling the buttons with sort method on the repoListState*/}
         <button  >Sort by stars</button>
         <button  >Sort by forks</button>
         <button  >Sort by time</button>
