@@ -33,7 +33,7 @@ const UserInfo = () => {
           image={userData.avatar_url}
           alt="avatar"
           sx={{ width: 250, height: 250, borderRadius: "50%",
-          boxShadow: "3 3 10", border: "solid 2px darkgreen" }}
+          boxShadow: "3 3 10", border: "solid 1px green" }}
           >
           </CardMedia>
             <CardContent sx={{ display: "flex" ,gap: 1 , flexDirection: "column" , justifyContent: "center" }} >
@@ -49,7 +49,7 @@ const UserInfo = () => {
             
         </Card>
         {/*the repository list*/}
-        
+
         <RepoList 
         reposList ={userDataRepos}
         />
