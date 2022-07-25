@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import UserInfo from './pages/UserInfo';
 import MostPopular from './pages/MostPopular';
 import {userContext} from './Helper/context';
-import { createTheme } from '@mui/material/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const theme = createTheme({
     palette: {
@@ -27,6 +27,7 @@ function App() {
   return (
     <BrowserRouter>
       <>
+      <ThemeProvider theme={theme} >
         <userContext.Provider value={{userData, setUserData}}>
           <Routes>
             <Route path='/' element={<Home />} />
@@ -34,6 +35,7 @@ function App() {
             <Route path={userPath} element={<UserInfo />} />
           </Routes>
         </userContext.Provider>
+      </ThemeProvider>
       </>
     </BrowserRouter>
     
