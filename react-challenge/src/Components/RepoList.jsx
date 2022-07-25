@@ -2,25 +2,36 @@ import React, {useState, useEffect, useRef} from 'react'
 //(props: any) => { props: any; "": any; }
 const RepoList = ( {reposList} )  => {
   const [reposListState, setReposListState] = useState([])
+  const [sortChanged, setSortChanged] = useState(0)
     // Values: Name, Stars, Forks, Last Update, Language, Bio
 
     useEffect(() => {
       setReposListState(reposList)
     }, [reposList])
 
+    useEffect(()=>{},[sortChanged])
+
     //sorting functions
     const sortByStars = () => {
       console.log('sorting by stars...')
+      setReposListState(reposListState => {
+        return reposListState.sort( (a,b) => {return b.stargazers_count - a.stargazers_count } )
+      })
+      setSortChanged(sortChanged => sortChanged +1)
     }
     const sortByForks = () => {
       console.log('sorting by forks...')
+      setReposListState(reposListState => {
+        return reposListState.sort( (a,b) => {return b.forks - a.forks } )
+      })
+      setSortChanged(sortChanged => sortChanged +1)
     }
     const sortByTime = () => {
       console.log('sorting by time...')
+      
+      setSortChanged(sortChanged => sortChanged +1)
     }
     
-    //commits_url: "https://api.github.com/repos/Cimorexave/2048-clone/commits{/sha}"
-
   return (
     <>
       <div className="listContainer">
