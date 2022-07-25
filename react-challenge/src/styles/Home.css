@@ -4,5 +4,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 1em;
+}
+.searchField {
+    display: flex;
+    margin: 1em;
+    gap: 1em;
+    align-items: center;
+}
+#checkIcon {
+    color: white;
 }
