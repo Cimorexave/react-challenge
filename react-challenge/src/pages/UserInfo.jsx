@@ -48,10 +48,8 @@ const UserInfo = () => {
             </CardContent>
             
         </Card>
-
-        <Link to="/most-popular" >link to most popular</Link> <br></br>
-        <Link to="/" >Back to home</Link>
         {/*the repository list*/}
+        
         <RepoList 
         reposList ={userDataRepos}
         />
