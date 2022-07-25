@@ -2,6 +2,8 @@ import React, { ReactComponentElement, useContext, useEffect, useState } from 'r
 import { userContext } from '../Helper/context';
 import RepoList from '../Components/RepoList';
 import { Link } from 'react-router-dom';
+import { Card, CardContent, CardMedia, Typography, CardActions, Breadcrumbs, Button } from '@mui/material';
+import { Box } from '@mui/system';
 
 const UserInfo = () => {
 
@@ -25,10 +27,28 @@ const UserInfo = () => {
 
   return (
     <>
-        <h1>{userData.login} / {userData.name} </h1>
-        <p>{userData.location}</p>
-        <img src={userData.avatar_url} alt="avatar" width="150" height="150"/>
-        <p>public repos: {userData.public_repos}</p>
+        <Card sx={{ display: 'flex', backgroundColor: "#cae3d7", padding: 6, gap: 3 , margin: 2 }} >
+          <CardMedia 
+          component="img"
+          image={userData.avatar_url}
+          alt="avatar"
+          sx={{ width: 250, height: 250, borderRadius: "50%",
+          boxShadow: "3 3 10", border: "solid 2px darkgreen" }}
+          >
+          </CardMedia>
+            <CardContent sx={{ display: "flex" ,gap: 1 , flexDirection: "column" , justifyContent: "center" }} >
+              <Typography variant="h6" >{userData.login} / {userData.name}</Typography>
+              <Typography variant="body2" > Public Repos : {userData.public_repos}</Typography>
+              <Typography variant='caption' sx={{fontSize: 10}} > LOCATION: {userData.location} </Typography>
+              
+                <Breadcrumbs sx={{marginTop: 1}}>
+                  <Button variant="contained" size='small' ><Link to="/most-popular" style={{textDecoration: "none", color: "black"}}>most popular</Link></Button>
+                  <Button variant="contained" size='small' ><Link to="/" style={{textDecoration: "none", color: "black"}} >Back to home</Link></Button>
+                </Breadcrumbs>
+            </CardContent>
+            
+        </Card>
+
         <Link to="/most-popular" >link to most popular</Link> <br></br>
         <Link to="/" >Back to home</Link>
         {/*the repository list*/}
