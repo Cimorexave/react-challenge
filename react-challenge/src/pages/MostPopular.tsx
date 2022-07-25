@@ -1,7 +1,10 @@
 import React , {useContext, useState, useEffect} from 'react';
 import { userContext } from '../Helper/context';
-import {Button} from '@mui/material';
-import {Link, Navigate, useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { Button, Typography } from '@mui/material';
+import { Card, CardContent, CardMedia, Breadcrumbs, Chip } from '@mui/material';
+import ForkRightIcon from '@mui/icons-material/ForkRight';
+import StarIcon from '@mui/icons-material/Star';
 
 
 interface repoListInterface {
@@ -41,25 +44,39 @@ const MostPopular = () => {
 
   return (
     <>
+    <div className="header">
       <input type="text" name="" id="input"
       placeholder='search repos...' onChangeCapture={handleRepoSearch} />
       <Button variant='contained' onClick={() => {navigate(-1)}}> Go Back </Button>
-
+    </div>
+      <div className="list">
       {
         resultedSearchRepos.map( repo => {
           return (
-            <div className='repoCard' id='repoCard' key={repo.id}>
-              
-                <h1>{repo.name}</h1>
-                <p>{repo.language}</p>
-                {repo.private ? <p>private</p> : <p>public</p> }
-                <p>forks: {repo.forks}</p>
-                <p>stars: {repo.stargazers_count}</p>
-                <p>Last updated at: {repo.updated_at}</p>
+            <Card className='repoCard' id='repoCard' key={repo.id} sx={{display: "flex", flexDirection: "column",
+            padding: "1em 3em", backgroundColor: "#cae3d7",
+           borderRadius: 15, justifyContent: "center", alignItems: "center", textAlign: "center" }} >
+            <div className="content">
+            <Typography variant="h3" >{repo.name}</Typography>
+            <CardContent sx={{ display: 'flex', margin: 0, flexDirection: "column", gap: 2 }} >
+              <Chip label={`${repo.language}`} variant="outlined" sx={{ width: "fit-content", alignSelf: "center" }} />
+            
+              <div style={{ display: "flex", gap: "0.75em", justifyContent: "center" }} >
+                <Chip label={`Stars: ${repo.stargazers_count}`} icon={<StarIcon />} variant="filled" color="primary" />
+                <Chip label={`Forks: ${repo.forks}`} icon={<ForkRightIcon />} variant="filled" color='secondary' />
               </div>
+              
+              <Typography variant='caption' >Last updated at: {new Date(repo.updated_at).toString().slice(0, 25)} </Typography>
+            </CardContent>
+            </div>
+            
+          </Card>
+            
             )
           } )
         }
+      </div>
+    
     </>
   )
 }
