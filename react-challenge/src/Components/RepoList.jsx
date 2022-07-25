@@ -7,6 +7,17 @@ const RepoList = ( {reposList} )  => {
     useEffect(() => {
       setReposListState(reposList)
     }, [reposList])
+
+    //sorting functions
+    const sortByStars = () => {
+      console.log('sorting by stars...')
+    }
+    const sortByForks = () => {
+      console.log('sorting by forks...')
+    }
+    const sortByTime = () => {
+      console.log('sorting by time...')
+    }
     
     //commits_url: "https://api.github.com/repos/Cimorexave/2048-clone/commits{/sha}"
 
@@ -14,9 +25,9 @@ const RepoList = ( {reposList} )  => {
     <>
       <div className="listContainer">
         {/*handling the buttons with sort method on the repoListState*/}
-        <button  >Sort by stars</button>
-        <button  >Sort by forks</button>
-        <button  >Sort by time</button>
+        <button onClick={sortByStars} >Sort by stars</button>
+        <button onClick={sortByForks} >Sort by forks</button>
+        <button onClick={sortByTime} >Sort by time</button>
         Repositories: 
         {
         
