@@ -61,7 +61,7 @@ const Home = () => {
         <Typography variant='h6' >Search User and click the button</Typography>
         <div className="searchField">
           <TextField
-          sx = {{padding: "0.5em", width: "18em" }}
+          sx = {{ width: "18em" }}
           value={username}
           id='textInput'
           variant='outlined'
@@ -71,7 +71,7 @@ const Home = () => {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <GitHubIcon fontSize='medium' color='primary'/>
+                <GitHubIcon fontSize='large' color='primary'/>
               </InputAdornment>
             ),
             endAdornment: (
