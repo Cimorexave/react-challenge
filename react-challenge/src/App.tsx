@@ -31,6 +31,7 @@ function App() {
         <userContext.Provider value={{userData, setUserData}}>
           <Routes>
             <Route path='/' element={<Home />} />
+            <Route path='/react-challenge' element={<Home />} />
             <Route path='/most-popular' element={<MostPopular />}/>
             <Route path={userPath} element={<UserInfo />} />
           </Routes>
