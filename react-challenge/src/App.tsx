@@ -7,14 +7,14 @@ import {userContext} from './Helper/context';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const theme = createTheme({
-    palette: {
-      primary: {
-        main: '#81c784',
-      },
-      secondary: {
-        main: '#c2185b',
-      },
+  palette: {
+    primary: {
+      main: '#00e676',
     },
+    secondary: {
+      main: '#ff80ab',
+    },
+  },
   
 });
 
