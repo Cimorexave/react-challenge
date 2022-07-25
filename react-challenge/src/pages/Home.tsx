@@ -11,6 +11,7 @@ const Home = () => {
 
 
     const [username, setUsername] = useState<String>("")
+    const [userExists, setUserExists] = useState<boolean>(false)
     const {userData, setUserData} = useContext(userContext)
 
     useEffect(() => {
@@ -21,6 +22,7 @@ const Home = () => {
                     if (!response.ok) {console.error(Error)}
                     response.json().then (data => {
                         console.log(data)
+                        setUserExists(true)
                         setUserData(data)
                         //if (data.login)
                           //navigate(`/${data.login}`, {replace: true})
@@ -33,7 +35,7 @@ const Home = () => {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         console.log(e.target.value)
-        setUsername(e.target.value)
+        setUsername(e.target.value) 
       }
 
     const handleClick = () => {
