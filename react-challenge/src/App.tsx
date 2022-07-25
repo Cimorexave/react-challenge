@@ -23,6 +23,7 @@ function App() {
   
   const [userData, setUserData] = useState<any>({})
   const userPath = `/${userData.login}`
+  const userPathM = `/react-challenge/${userData.login}`
 
   return (
     <BrowserRouter>
@@ -33,7 +34,9 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/react-challenge' element={<Home />} />
             <Route path='/most-popular' element={<MostPopular />}/>
+            <Route path='/react-challenge/most-popular' element={<MostPopular />}/>
             <Route path={userPath} element={<UserInfo />} />
+            <Route path={userPathM} element={<UserInfo />} />
           </Routes>
         </userContext.Provider>
       </ThemeProvider>
