@@ -1,5 +1,8 @@
 import React , {useContext, useState, useEffect} from 'react';
 import { userContext } from '../Helper/context';
+import {Button} from '@mui/material';
+import {Link, Navigate, useNavigate} from 'react-router-dom';
+
 
 interface repoListInterface {
   id: number,
@@ -34,11 +37,13 @@ const MostPopular = () => {
     console.log(resultedSearchRepos)
   }
 
+  let navigate = useNavigate()
 
   return (
     <>
       <input type="text" name="" id="input"
       placeholder='search repos...' onChangeCapture={handleRepoSearch} />
+      <Button variant='contained' onClick={() => {navigate(-1)}}> Go Back </Button>
 
       {
         resultedSearchRepos.map( repo => {
