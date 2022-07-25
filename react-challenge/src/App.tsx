@@ -3,7 +3,21 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import UserInfo from './pages/UserInfo';
 import MostPopular from './pages/MostPopular';
-import {userContext} from './Helper/context'
+import {userContext} from './Helper/context';
+import { createTheme } from '@mui/material/styles';
+
+const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#81c784',
+      },
+      secondary: {
+        main: '#c2185b',
+      },
+    },
+  
+});
+
 
 function App() {
   
