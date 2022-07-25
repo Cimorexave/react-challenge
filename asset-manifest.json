@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-challenge/static/css/main.fa592a19.css",
-    "main.js": "/react-challenge/static/js/main.9cee6dc3.js",
+    "main.js": "/react-challenge/static/js/main.699d0c09.js",
     "static/media/roboto-all-500-normal.woff": "/react-challenge/static/media/roboto-all-500-normal.0ab669b7a0d19b178f57.woff",
     "static/media/roboto-all-700-normal.woff": "/react-challenge/static/media/roboto-all-700-normal.a457fde362a540fcadff.woff",
     "static/media/roboto-all-400-normal.woff": "/react-challenge/static/media/roboto-all-400-normal.c5d001fa922fa66a147f.woff",
@@ -36,10 +36,10 @@
     "static/media/roboto-greek-ext-700-normal.woff2": "/react-challenge/static/media/roboto-greek-ext-700-normal.bd9854c751441ccc1a70.woff2",
     "index.html": "/react-challenge/index.html",
     "main.fa592a19.css.map": "/react-challenge/static/css/main.fa592a19.css.map",
-    "main.9cee6dc3.js.map": "/react-challenge/static/js/main.9cee6dc3.js.map"
+    "main.699d0c09.js.map": "/react-challenge/static/js/main.699d0c09.js.map"
   },
   "entrypoints": [
     "static/css/main.fa592a19.css",
-    "static/js/main.9cee6dc3.js"
+    "static/js/main.699d0c09.js"
   ]
 }
