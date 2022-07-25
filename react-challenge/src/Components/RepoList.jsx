@@ -28,7 +28,10 @@ const RepoList = ( {reposList} )  => {
     }
     const sortByTime = () => {
       console.log('sorting by time...')
-      
+      console.log(new Date(reposListState[0].updated_at), new Date(reposListState[0].updated_at).getTime())
+      setReposListState(reposListState => {
+        return reposListState.sort( (a , b) => { return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime() } )
+      })
       setSortChanged(sortChanged => sortChanged +1)
     }
     
@@ -51,7 +54,7 @@ const RepoList = ( {reposList} )  => {
                 {repo.private ? <p>private</p> : <p>public</p> }
                 <p>forks: {repo.forks}</p>
                 <p>stars: {repo.stargazers_count}</p>
-                <p>Last updated at: {repo.updated_at}</p>
+                <p>Last updated at: {new Date(repo.updated_at).toString().slice(0, 25)}</p>
               </div>
             )
           } )
