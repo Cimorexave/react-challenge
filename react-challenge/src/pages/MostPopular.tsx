@@ -1,10 +1,12 @@
 import React , {useContext, useState, useEffect} from 'react';
 import { userContext } from '../Helper/context';
 import { useNavigate } from 'react-router-dom';
-import { Button, Typography } from '@mui/material';
-import { Card, CardContent, CardMedia, Breadcrumbs, Chip } from '@mui/material';
+import { Button, InputAdornment, Typography } from '@mui/material';
+import { Card, CardContent, TextField, Chip } from '@mui/material';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import ForkRightIcon from '@mui/icons-material/ForkRight';
 import StarIcon from '@mui/icons-material/Star';
+import '../styles/RepoList.css';
 
 
 interface repoListInterface {
@@ -44,12 +46,25 @@ const MostPopular = () => {
 
   return (
     <>
-    <div className="header">
-      <input type="text" name="" id="input"
-      placeholder='search repos...' onChangeCapture={handleRepoSearch} />
-      <Button variant='contained' onClick={() => {navigate(-1)}}> Go Back </Button>
+    <div className="heading" style={{ padding: "2em" }}>
+    <TextField
+          type="text" name="" id="input"
+          placeholder='search repos...' onChangeCapture={handleRepoSearch}
+          sx = {{ width: "18em" }}
+          variant='outlined'
+          label='Search'
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <GitHubIcon fontSize='large' color='primary'/>
+              </InputAdornment>
+            )
+          }}
+          />
+      
+      <Button variant='contained' sx={{ height: "2.5em" }} onClick={() => {navigate(-1)}}> Go Back </Button>
     </div>
-      <div className="list">
+      <div className="list" style={{ padding: "1em" }}>
       {
         resultedSearchRepos.map( repo => {
           return (
