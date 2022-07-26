@@ -5,15 +5,19 @@ import ForkRightIcon from '@mui/icons-material/ForkRight';
 import StarIcon from '@mui/icons-material/Star';
 import '../styles/RepoList.css'
 
+interface propsInterface {
+  userDataRepos: Array<object>
+  
+}
 
-const RepoList = ( {reposList} )  => {
+const RepoList: React.FC<propsInterface> = ( {userDataRepos} )  => {
   const [reposListState, setReposListState] = useState([])
   const [sortChanged, setSortChanged] = useState(0)
     // Values: Name, Stars, Forks, Last Update, Language, Bio
 
     useEffect(() => {
-      setReposListState(reposList)
-    }, [reposList])
+      setReposListState(userDataRepos)
+    }, [userDataRepos])
 
     useEffect(()=>{},[sortChanged])
 
