@@ -1,6 +1,6 @@
 import { Button, Typography } from '@mui/material';
 import React, {useState, useEffect} from 'react';
-import { Card, CardContent, CardMedia, Breadcrumbs, Chip } from '@mui/material';
+import { Card, CardContent, Chip } from '@mui/material';
 import ForkRightIcon from '@mui/icons-material/ForkRight';
 import StarIcon from '@mui/icons-material/Star';
 import '../styles/RepoList.css'

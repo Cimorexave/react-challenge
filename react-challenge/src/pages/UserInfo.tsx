@@ -1,24 +1,13 @@
-import React, { ReactComponentElement, useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { userContext } from '../Helper/context';
 import RepoList from '../Components/RepoList';
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardMedia, Typography, CardActions, Breadcrumbs, Button } from '@mui/material';
-import { Box } from '@mui/system';
 
-interface repoListInterface {
-  
-  id: number,
-  name: string,
-  language: string,
-  private: boolean,
-  forks: string,
-  stargazers_count: number,
-  updated_at: string
-}
 
 const UserInfo = () => {
 
-  const {userData, setUserData} = useContext(userContext)
+  const {userData} = useContext(userContext)
   const [userDataRepos , setUserDataRepos] = useState<Array<object>>([{}])
   console.log(userData)
 
